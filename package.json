@@ -1,0 +1,17 @@
+{
+  "name": "evomo",
+  "version": "1.0.0",
+  "description": "E2E Test for application production",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "keywords": [],
+  "author": "Lintang Hannan Maulana",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.1.0"
+  }
+}
