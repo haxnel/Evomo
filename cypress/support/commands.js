@@ -62,3 +62,44 @@ Cypress.Commands.add("logout", () => {
   cy.get("#login_password");
   cy.url().should("include", "/");
 });
+
+Cypress.Commands.add("packer_card_daily", () => {
+  cy.get(":nth-child(2) > .ant-card > .ant-card-body > .ant-btn").click();
+  cy.contains("DAILY").should("have.text", "DAILY").click();
+  cy.get('[data-testid="machine"]').click();
+  cy.wait(2500);
+  cy.get(".ant-select-selection-item").click();
+  cy.get('[title = "2 Jam"]').click();
+  cy.wait(2500);
+  cy.get('[data-testid="button-relatif"]').click();
+  cy.wait(2500);
+  cy.get(".ant-select-selection-item").click();
+  cy.get('[title = "4 Jam"]').click();
+  cy.wait(2500);
+  cy.get('[data-testid="date-root"]').click();
+  cy.get('[data-testid="1 Jam Terakhir"]').click();
+  cy.wait(3500);
+  cy.get(".ant-page-header-back-button > svg > path").click();
+});
+
+Cypress.Commands.add("packer_card_shiftly", () => {
+  cy.contains("SHIFTLY").click();
+  cy.get('[data-testid="machine"]').click();
+  cy.wait(2500);
+  /*
+  cy.get(".ant-select-selection-item").click();
+  cy.get('[title = "2 Jam"]').click();
+  cy.wait(2500);
+  cy.get('[data-testid="button-relatif"]').click();
+  cy.wait(2500);
+  cy.get(".ant-select-selection-item").click();
+  cy.get('[title = "4 Jam"]').click();
+  cy.wait(2500);
+  cy.get('[data-testid="date-root"]').click();
+  cy.get('[data-testid="1 Jam Terakhir"]').click();
+  cy.wait(3500);
+  cy.get(".ant-page-header-back-button > svg > path").click();
+  */
+});
+
+//cy.get(':nth-child(2) > .ant-card > .ant-card-body > .ant-btn').click();
