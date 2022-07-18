@@ -12,6 +12,9 @@
   "author": "Lintang Hannan Maulana",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.1.0"
+    "cypress": "^10.3.0"
+  },
+  "dependencies": {
+    "cy2": "^2.0.0"
   }
 }

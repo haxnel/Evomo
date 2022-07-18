@@ -39,7 +39,24 @@ Cypress.Commands.add("login", (username, password) => {
   cy.get("#btn-login", { timeout: 50000 }).click();
 });
 
-/*-------LINI----------*/
+/*-------LOGIN Alternative----------
+Cypress.Commands.add("login", (numb) => {
+  cy.visit("/");
+  cy.get("body").then((body) => {
+    if (body.find('#login_username').length > 0) {
+      if (numb === 'supervisor1') {
+        cy.get("#login_username", { timeout: 50000 }).type('LDR PRD 1').should("have.value", 'LDR PRD 4');
+        cy.get("#login_password", { timeout: 50000 }).type('password').should("have.value", 'password');
+        cy.get("#btn-login", { timeout: 50000 }).click();
+      } else if (numb === 'supervisor2'){
+        cy.get("#login_username", { timeout: 50000 }).type('LDR PRD 4').should("have.value", 'LDR PRD 4');
+        cy.get("#login_password", { timeout: 50000 }).type('password').should("have.value", 'password');
+        cy.get("#btn-login", { timeout: 50000 }).click();
+      }
+    }
+  })
+});*/
+
 Cypress.Commands.add("lini", () => {
   cy.contains("OEE").should("have.text", "OEE");
   cy.contains("TEEP").should("have.text", "TEEP");
@@ -58,7 +75,6 @@ Cypress.Commands.add("lini_persen", () => {
   cy.contains("QUA").should("have.text", "QUA");
 });
 
-/*-------LOGOUT----------*/
 Cypress.Commands.add("logout", () => {
   cy.get(".ant-avatar").click();
   cy.contains("Logout").click();
@@ -86,12 +102,26 @@ Cypress.Commands.add("lini_card_daily1", () => {
   cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
 });
 
+Cypress.Commands.add("lini_card_daily11", () => {
+  cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
+    timeout: 50000,
+  })
+    .last()
+    .click();
+  cy.wait(2000);
+  cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
+    timeout: 50000,
+  }).click();
+  cy.wait(2000);
+  cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
+});
+
 Cypress.Commands.add("lini_card_shiftly1", () => {
   cy.get('[data-testid="shiftly-btn"]', { timeout: 50000 }).click();
   cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
     timeout: 50000,
   })
-    .first()
+    .last()
     .click();
   cy.wait(2000);
   cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
@@ -101,15 +131,27 @@ Cypress.Commands.add("lini_card_shiftly1", () => {
   cy.get(".ant-page-header-back-button > svg > path", {
     timeout: 50000,
   }).click();
-  // cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
-  // cy.wait(5000);
 });
 
-Cypress.Commands.add("lini_card_daily2", () => {
+Cypress.Commands.add("lini_card_shiftly11", () => {
+  cy.get('[data-testid="shiftly-btn"]', { timeout: 50000 }).click();
   cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
     timeout: 50000,
   })
-    .first()
+    .last()
+    .click();
+  cy.wait(2000);
+  cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
+    timeout: 50000,
+  }).click();
+  cy.wait(2000);
+  cy.get(".ant-page-header-back-button > svg > path", {
+    timeout: 50000,
+  }).click();
+});
+
+Cypress.Commands.add("lini_card_daily2", () => {
+  cy.get(':nth-child(2) > .ant-card > .ant-card-body > .ant-btn', { timeout: 50000 })
     .click();
   cy.wait(2000);
   cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
@@ -136,7 +178,21 @@ Cypress.Commands.add("lini_card_shiftly2", () => {
   }).click();
 });
 
-//shiftly
+Cypress.Commands.add("packer_card_daily11", () => {
+  cy.get('[style=""] > .Button__StyledButton-sc-1s4bp2x-0', { timeout: 50000 })
+    .last()
+    .click();
+  cy.wait(5000);
+  cy.get(".ant-select-selection-item").click();
+  cy.get('[title = "2 Jam"]', { timeout: 50000 }).click();
+  cy.get('[data-testid="button-relatif"]', { timeout: 50000 }).click();
+  cy.get(".ant-select-selection-item", {timeout: 50000}).click();
+  cy.get('[title = "4 Jam"]', { timeout: 50000 }).click();
+  cy.get('[data-testid="date-root"]',{timeout: 50000}).click();
+  cy.get('[data-testid="1 Jam Terakhir"]', { timeout: 50000 }).click();
+  cy.get(".ant-page-header-back-button > svg > path").click();
+});
+
 
 Cypress.Commands.add("lini_shiftly_card_daily1", () => {
   cy.wait(3500);
@@ -189,7 +245,6 @@ Cypress.Commands.add("lini_shiftly_card_shiftly1", () => {
   cy.get(".ant-page-header-back-button > svg > path", {
     timeout: 50000,
   }).click();
-  //cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
 });
 
 Cypress.Commands.add("lini_shiftly_card_shiftly1_1", () => {
@@ -246,8 +301,6 @@ Cypress.Commands.add("lini_shiftly_card_daily2_2", () => {
   }).click();
   cy.wait(3000);
   cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
-  //cy.get(".ant-page-header-back-button > svg > path").click();
-  //cy.wait(2000);
 });
 
 Cypress.Commands.add("lini_shiftly_card_shiftly2", () => {
@@ -291,6 +344,21 @@ Cypress.Commands.add("lini_shiftly_card_shiftly2_2", () => {
 });
 
 //PACKER
+Cypress.Commands.add("masuk_packer_card", () => {
+  cy.get(':nth-child(2) > .ant-card > .ant-card-body > .ant-btn').click()
+  cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
+    timeout: 50000,
+  })
+    .first()
+    .click();
+  cy.wait(5000);
+  cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
+    timeout: 50000,
+  }).click();
+  cy.wait(2000);
+  cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
+});
+
 
 Cypress.Commands.add("packer_card_daily", () => {
   cy.get('[style=""] > .Button__StyledButton-sc-1s4bp2x-0', { timeout: 50000 })
@@ -336,6 +404,20 @@ Cypress.Commands.add("packer_card_shiftly", () => {
   cy.get(".ant-page-header-back-button > svg > path").click();
 });
 
+Cypress.Commands.add("packer_card_shiftly11", () => {
+  cy.contains("SHIFTLY").click();
+  cy.wait(2500);
+  cy.get('[style=""] > .Button__StyledButton-sc-1s4bp2x-0').last().click();
+  cy.get('[data-testid="button-kumulatif"]').click();
+  cy.get('[data-testid="button-relatif"]', { timeout: 60000 }).click();
+  cy.wait(5000);
+  cy.get(".ant-select-selection-item").click();
+  cy.get('[title = "4 Jam"]', { timeout: 60000 }).click();
+  cy.get('[data-testid="date-root"]').click();
+  cy.get('[data-testid="1 Jam Terakhir"]', { timeout: 60000 }).click();
+  cy.get(".ant-page-header-back-button > svg > path").click();
+});
+
 Cypress.Commands.add("packer_card_shiftly2", () => {
   cy.contains("SHIFTLY").click();
   cy.wait(2500);
@@ -350,9 +432,6 @@ Cypress.Commands.add("packer_card_shiftly2", () => {
   cy.get(".ant-page-header-back-button > svg > path").click();
 });
 
-/*-------DASHBOARD----------*/
-
-/*-------REASON----------*/
 Cypress.Commands.add("reason", () => {
   cy.get('[style="overflow: auto;"] > :nth-child(2) > .ant-row', {
     timeout: 50000,
@@ -456,9 +535,7 @@ Cypress.Commands.add("delete_reason_name", () => {
   cy.get(".swal2-confirm").click();
 });
 
-//cy.get(".ant-page-header-back-button > svg").click();
-// cy.get('.ant-breadcrumb-link')
-
+//Masuk line 7 Supervisor
 Cypress.Commands.add("masuk_line7", () => {
   cy.get(".ant-breadcrumb-link").click();
   cy.contains("Line 7 PT Mulia Boga Raya").click();

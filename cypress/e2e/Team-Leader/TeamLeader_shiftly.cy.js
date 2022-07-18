@@ -1,5 +1,5 @@
 describe("E2e Testing Application production HMI (Shiftly)", () => {
-  /*context("Team Leader 4 Line 2", () => {
+    context("Team Leader (Supervisor) 4 Line 2", () => {
     const username = "LDR PRD 4";
     const password = "password";
 
@@ -52,8 +52,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
       cy.logout();
     });
   });
-  */
-  context("Team Leader 4 Line 7", () => {
+
+  context("Team Leader (Supervisor) 4 Line 7", () => {
     const username = "LDR PRD 4";
     const password = "password";
 
