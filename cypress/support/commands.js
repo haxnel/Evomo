@@ -78,8 +78,6 @@ Cypress.Commands.add("lini_persen", () => {
 Cypress.Commands.add("logout", () => {
   cy.get(".ant-avatar").click();
   cy.contains("Logout").click();
-  cy.get("#login_username");
-  cy.get("#login_password");
   cy.url().should("include", "/");
 });
 
@@ -151,8 +149,9 @@ Cypress.Commands.add("lini_card_shiftly11", () => {
 });
 
 Cypress.Commands.add("lini_card_daily2", () => {
-  cy.get(':nth-child(2) > .ant-card > .ant-card-body > .ant-btn', { timeout: 50000 })
-    .click();
+  cy.get(":nth-child(2) > .ant-card > .ant-card-body > .ant-btn", {
+    timeout: 50000,
+  }).click();
   cy.wait(2000);
   cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
     timeout: 50000,
@@ -186,13 +185,12 @@ Cypress.Commands.add("packer_card_daily11", () => {
   cy.get(".ant-select-selection-item").click();
   cy.get('[title = "2 Jam"]', { timeout: 50000 }).click();
   cy.get('[data-testid="button-relatif"]', { timeout: 50000 }).click();
-  cy.get(".ant-select-selection-item", {timeout: 50000}).click();
+  cy.get(".ant-select-selection-item", { timeout: 50000 }).click();
   cy.get('[title = "4 Jam"]', { timeout: 50000 }).click();
-  cy.get('[data-testid="date-root"]',{timeout: 50000}).click();
+  cy.get('[data-testid="date-root"]', { timeout: 50000 }).click();
   cy.get('[data-testid="1 Jam Terakhir"]', { timeout: 50000 }).click();
   cy.get(".ant-page-header-back-button > svg > path").click();
 });
-
 
 Cypress.Commands.add("lini_shiftly_card_daily1", () => {
   cy.wait(3500);
@@ -345,7 +343,7 @@ Cypress.Commands.add("lini_shiftly_card_shiftly2_2", () => {
 
 //PACKER
 Cypress.Commands.add("masuk_packer_card", () => {
-  cy.get(':nth-child(2) > .ant-card > .ant-card-body > .ant-btn').click()
+  cy.get(":nth-child(2) > .ant-card > .ant-card-body > .ant-btn").click();
   cy.get(":nth-child(2) > .Button__StyledButton-sc-1s4bp2x-0", {
     timeout: 50000,
   })
@@ -358,7 +356,6 @@ Cypress.Commands.add("masuk_packer_card", () => {
   cy.wait(2000);
   cy.get(".ant-page-header-back-button > svg", { timeout: 50000 }).click();
 });
-
 
 Cypress.Commands.add("packer_card_daily", () => {
   cy.get('[style=""] > .Button__StyledButton-sc-1s4bp2x-0', { timeout: 50000 })
@@ -462,11 +459,11 @@ Cypress.Commands.add("reason", () => {
   ).click();
 });
 
-Cypress.Commands.add("curd_reason", () => {
+/*Cypress.Commands.add("curd_reason", () => {
   cy.get(
     '.box-1 > .reason-container > [style="overflow: auto;"] > :nth-child(5) > .ant-row > :nth-child(2) > .color-group > .ant-dropdown-trigger > svg'
   ).click();
-});
+});*/
 
 Cypress.Commands.add("add_reason_grup", () => {
   cy.get(".ant-row > :nth-child(1) > .ant-dropdown-trigger").click();
@@ -535,7 +532,17 @@ Cypress.Commands.add("delete_reason_name", () => {
   cy.get(".swal2-confirm").click();
 });
 
-//Masuk line 7 Supervisor
+//Masuk line 1,2,7
+Cypress.Commands.add("masuk_line1", () => {
+  cy.get(".ant-breadcrumb-link").click();
+  cy.contains("Line 1 PT Mulia Boga Raya").click();
+});
+
+Cypress.Commands.add("masuk_line2", () => {
+  cy.get(".ant-breadcrumb-link").click();
+  cy.contains("Line 2 PT Mulia Boga Raya").click();
+});
+
 Cypress.Commands.add("masuk_line7", () => {
   cy.get(".ant-breadcrumb-link").click();
   cy.contains("Line 7 PT Mulia Boga Raya").click();
