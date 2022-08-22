@@ -429,6 +429,8 @@ Cypress.Commands.add("packer_card_shiftly2", () => {
   cy.get(".ant-page-header-back-button > svg > path").click();
 });
 
+//REASON
+
 Cypress.Commands.add("reason", () => {
   cy.get('[style="overflow: auto;"] > :nth-child(2) > .ant-row', {
     timeout: 50000,
@@ -468,7 +470,7 @@ Cypress.Commands.add("reason", () => {
 Cypress.Commands.add("add_reason_grup", () => {
   cy.get(".ant-row > :nth-child(1) > .ant-dropdown-trigger").click();
   cy.get(".ant-dropdown-menu > :nth-child(1)").click();
-  cy.get("#reason_form_name").type("testing");
+  cy.get("#reason_form_name").type("aaaa");
   cy.get("#reason_form_color").invoke("val", "1A4D2E").trigger("change");
   cy.get("#reason_form_tag").click();
   cy.contains("Performance").click();
@@ -477,9 +479,12 @@ Cypress.Commands.add("add_reason_grup", () => {
 });
 
 Cypress.Commands.add("edit_reason_grup", () => {
-  cy.get(":nth-child(5) > .ant-row > :nth-child(2)").first().click();
+  //cy.get(":nth-child(5) > .ant-row > :nth-child(2)").first().click();
+  cy.get(
+    '.box-1 > .reason-container > [style="overflow: auto;"] > :nth-child(1) > .ant-row > :nth-child(2) > .color-group > .ant-dropdown-trigger > svg'
+  ).click();
   cy.contains("Edit").click();
-  cy.get("#reason_form_name").clear().type("testing-1");
+  cy.get("#reason_form_name").clear().type("aaaa-1");
   cy.get(
     ".ant-form-item-control-input-content > .Button__BaseButton-lb9z7q-0"
   ).click();
@@ -487,7 +492,10 @@ Cypress.Commands.add("edit_reason_grup", () => {
 });
 
 Cypress.Commands.add("delete_reason_grup", () => {
-  cy.get(":nth-child(5) > .ant-row > :nth-child(2)").first().click();
+  //cy.get(":nth-child(5) > .ant-row > :nth-child(2)").first().click();
+  cy.get(
+    ".card-active > .ant-row > :nth-child(2) > .color-group > .ant-dropdown-trigger > svg"
+  ).click();
   cy.contains("Delete").click();
   cy.get(".swal2-confirm").click();
 });
@@ -496,10 +504,11 @@ Cypress.Commands.add("add_reason_name", () => {
   cy.get(".ant-row > :nth-child(1) > .ant-dropdown-trigger", {
     timeout: 50000,
   }).click();
-  cy.get(".ant-dropdown-menu > :nth-child(2)").first().click();
+  //cy.get(":nth-child(6) > :nth-child(1) > .ant-dropdown > .ant-dropdown-menu > :nth-child(2)").click();
+  cy.get(".ant-dropdown-menu > :nth-child(2)").last().click();
   cy.get("#reason_form_name").type("testing-1");
   cy.get("#reason_form_reason_group_id").click();
-  cy.get('[label="testing-1"] > .ant-select-item-option-content').click();
+  cy.get('[label="aaaa-1"] > .ant-select-item-option-content').click();
   cy.get(".ant-select-selection-overflow").click();
   cy.contains("Packer").click();
   cy.get(
@@ -508,7 +517,8 @@ Cypress.Commands.add("add_reason_name", () => {
 });
 
 Cypress.Commands.add("edit_reason_name", () => {
-  cy.get(":nth-child(5) > .ant-row").click();
+  //cy.get(":nth-child(5) > .ant-row").click();
+  cy.get(".card-active > .ant-row > :nth-child(1) > span").click();
   cy.wait(2000);
   cy.get(
     '.box-3 > .reason-container > [style="overflow: auto;"] > .card-group > .ant-row > :nth-child(2) > .color-group > .ant-dropdown-trigger > svg > path'
@@ -518,12 +528,14 @@ Cypress.Commands.add("edit_reason_name", () => {
   cy.get(
     ".ant-form-item-control-input-content > .Button__BaseButton-lb9z7q-0"
   ).click();
+  cy.wait(2500);
 });
 
 Cypress.Commands.add("delete_reason_name", () => {
   cy.visit("/reason");
   cy.wait(2000);
-  cy.get(":nth-child(5) > .ant-row").click();
+  //cy.get(":nth-child(5) > .ant-row").click();
+  cy.get(".card-active > .ant-row > :nth-child(1) > span").click();
   cy.wait(2000);
   cy.get(
     '.box-3 > .reason-container > [style="overflow: auto;"] > .card-group > .ant-row > :nth-child(2) > .color-group > .ant-dropdown-trigger > svg > path'

@@ -7,7 +7,7 @@ describe("E2e Testing Application production Mesin", () => {
       Cypress.Cookies.preserveOnce("secret");
     });
 
-    it.only("Check untuk user login (team leader)", () => {
+    it("Check untuk user login (team leader)", () => {
       cy.login(username, password);
       cy.masuk_line1();
     });
@@ -25,7 +25,7 @@ describe("E2e Testing Application production Mesin", () => {
       cy.packer_card_shiftly();
     });
 
-    it.only("Check logout", () => {
+    it("Check logout", () => {
       cy.logout();
     });
   });

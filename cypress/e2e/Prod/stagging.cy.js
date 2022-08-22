@@ -1,7 +1,7 @@
-describe("Testing Reason", () => {
+describe("Testing Reason Staging", () => {
   context("Enggineering bagian reason", () => {
-    const username = "MFG1";
-    const password = "tastebetter";
+    const username = "engineering";
+    const password = "password";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -13,11 +13,11 @@ describe("Testing Reason", () => {
       cy.wait(3000);
       cy.visit("/reason", { timeout: 50000 });
     });
-
+    /*
     it("Check Reason", () => {
       cy.reason();
     });
-
+    */
     it("Check pembuatan reason grup", () => {
       cy.add_reason_grup();
     });
