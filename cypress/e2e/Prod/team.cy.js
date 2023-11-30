@@ -1,7 +1,7 @@
 describe("E2e Testing Application production HMI (Shiftly)", () => {
   context("Team Leader sesuai UAT", () => {
-    const username = "team_leader";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -44,8 +44,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
   });
 
   context("Team Leader (Supervisor) 4 Line 2", () => {
-    const username = "LDR PRD 4";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -103,8 +103,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
 
   //Line 7
   context("Team Leader 4 (Supervisor) Line 7", () => {
-    const username = "LDR PRD 4";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -196,8 +196,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
 
 describe("E2e Testing Application production HMI (Shiftly)", () => {
   context("Team Leader (Supervisor) 4 Line 2", () => {
-    const username = "LDR PRD 4";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -250,8 +250,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
   });
 
   context("Team Leader (Supervisor) 4 Line 7", () => {
-    const username = "LDR PRD 4";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -334,8 +334,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
   });
 
   context("Team Leader (Supervisor) 5 Line 2", () => {
-    const username = "LDR PRD 5";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -388,8 +388,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
   });
 
   context("Team Leader (Supervisor) 5 Line 7", () => {
-    const username = "LDR PRD 5";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -472,8 +472,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
   });
 
   context("Team Leader (Supervisor) 6 Line 2", () => {
-    const username = "LDR PRD 6";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -526,8 +526,8 @@ describe("E2e Testing Application production HMI (Shiftly)", () => {
   });
 
   context("Team Leader (Supervisor) 6 Line 7", () => {
-    const username = "LDR PRD 6";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
