@@ -1,6 +1,6 @@
 context("Team Leader (Stagging)", () => {
-    const username = "myleader";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
