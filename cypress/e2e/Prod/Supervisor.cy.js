@@ -1,7 +1,7 @@
 describe("E2e Testing Application production Mesin", () => {
   context("Supervisor (Superuser) Line 1", () => {
-    const username = "SPV PRD 1";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
@@ -62,8 +62,8 @@ describe("E2e Testing Application production Mesin", () => {
   });
 
   context("Supervisor (Superuser) Line 7", () => {
-    const username = "SPV PRD 1";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
