@@ -1,6 +1,6 @@
 context("Supervisor (Superuser) Line 1", () => {
-    const username = "mysupervisor";
-    const password = "password";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
