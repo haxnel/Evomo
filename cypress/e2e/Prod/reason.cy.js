@@ -1,7 +1,7 @@
 describe("Testing Reason", () => {
   context("Enggineering bagian reason", () => {
-    const username = "MFG1";
-    const password = "tastebetter";
+    const username = "";
+    const password = "";
 
     beforeEach(() => {
       Cypress.Cookies.preserveOnce("secret");
