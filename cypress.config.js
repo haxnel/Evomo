@@ -6,6 +6,6 @@ module.exports = defineConfig({
   viewportHeight: 1000,
   viewportWidth: 1500,
   e2e: {
-    baseUrl: "https://dev-hmi.evomo.id/",
+    baseUrl: "masukan url",
   },
 });
